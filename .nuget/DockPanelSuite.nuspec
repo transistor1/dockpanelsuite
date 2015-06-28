@@ -1,21 +1,23 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
-    <version>2.9.0.0</version>
+    <version>3.0.0.9</version>
     <authors>Weifen Luo and other contributors</authors>
     <owners>Weifen Luo and other contributors</owners>
     <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
-    <projectUrl>http://dockpanelsuite.com</projectUrl>
+    <projectUrl>https://github.com/transistor1/dockpanelsuite.git</projectUrl>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Windows.Forms" targetFramework="" />
       <frameworkAssembly assemblyName="System" targetFramework="" />
     </frameworkAssemblies>
-    <id>DockPanelSuite</id>
+    <id>Transistor1.DockPanelSuite</id>
     <title>DockPanel Suite</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>The docking library for .Net Windows Forms development which mimics Visual Studio .Net.</description>
     <summary>The docking library for .Net Windows Forms development which mimics Visual Studio .Net.</summary>
     <releaseNotes>
+June 27, 2015: 3.0.0 Alpha 9
+1. Github Transistor1/#1 fix DockPanelSuite to work in ActiveX-exposed .NET usercontrol
 May 11, 2013: 3.0.0 Alpha 8
 1. GitHub #19 Added Visual Studio 2012 Light theme.
 2. GitHub #112 Changed theme related interfaces.
