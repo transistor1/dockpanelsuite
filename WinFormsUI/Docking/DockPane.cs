@@ -51,6 +51,12 @@ namespace WeifenLuo.WinFormsUI.Docking
             get { return m_tabStripControl; }
         }
 
+        private bool m_isDisposed = false;
+        public new bool IsDisposed
+        {
+            get { return m_isDisposed; }
+        }
+
         internal protected DockPane(IDockContent content, DockState visibleState, bool show)
         {
             InternalConstruct(content, visibleState, false, Rectangle.Empty, null, DockAlignment.Right, 0.5, show);
@@ -129,7 +135,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
+            if (disposing && !this.m_isDisposed)
             {
                 // IMPORTANT: avoid nested call into this method on Mono. 
                 // https://github.com/dockpanelsuite/dockpanelsuite/issues/16
@@ -155,6 +161,8 @@ namespace WeifenLuo.WinFormsUI.Docking
                 Splitter.Dispose();
                 if (m_autoHidePane != null)
                     m_autoHidePane.Dispose();
+
+                this.m_isDisposed = true;
             }
             base.Dispose(disposing);
         }
@@ -1220,6 +1228,9 @@ namespace WeifenLuo.WinFormsUI.Docking
         [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         protected override void WndProc(ref Message m)
         {
+            if (this.IsDisposed)
+                return;
+
             if (m.Msg == (int)Win32.Msgs.WM_MOUSEACTIVATE)
                 Activate();
 
