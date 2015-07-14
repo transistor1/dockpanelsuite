@@ -50,12 +50,13 @@ namespace WeifenLuo.WinFormsUI.Docking
                     }
                 }
 
-                DragControl.FindForm().Capture = true;
-                AssignHandle(DragControl.FindForm().Handle);
+                //DragControl.FindForm().Capture = true;
+                Helpers.WinformsHelper.FindParent(DragControl).Capture = true;
+                AssignHandle(Helpers.WinformsHelper.FindParent(DragControl).Handle);
                 //Application.AddMessageFilter(this);
                 return true;
             }
-
+               
             protected abstract void OnDragging();
 
             protected abstract void OnEndDrag(bool abort);
@@ -64,7 +65,8 @@ namespace WeifenLuo.WinFormsUI.Docking
             {
                 ReleaseHandle();
                 //Application.RemoveMessageFilter(this);
-                DragControl.FindForm().Capture = false;
+                //DragControl.FindForm().Capture = false;
+                Helpers.WinformsHelper.FindParent(DragControl).Capture = false;
 
                 OnEndDrag(abort);
             }
