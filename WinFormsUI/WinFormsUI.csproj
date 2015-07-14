@@ -57,6 +57,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Docking\DrawingRoutines.cs" />
+    <Compile Include="Docking\Helpers\WinformsHelper.cs" />
     <Compile Include="Docking\InertButton.cs">
       <SubType>Component</SubType>
     </Compile>
