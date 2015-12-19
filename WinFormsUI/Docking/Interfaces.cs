@@ -9,6 +9,10 @@ namespace WeifenLuo.WinFormsUI.Docking
         DockContentHandler DockHandler	{	get;	}
         void OnActivated(EventArgs e);
         void OnDeactivate(EventArgs e);
+        Color? ActiveTabColor { get; set; }
+        Color? InactiveTabColor { get; set; }
+        Color? LostFocusColor { get; set; }
+        Color? MouseHoverColor { get; set; }
     }
 
     public interface INestedPanesContainer
