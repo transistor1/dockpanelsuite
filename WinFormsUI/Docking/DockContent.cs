@@ -91,7 +91,12 @@ namespace WeifenLuo.WinFormsUI.Docking
             get { return DockHandler.CloseButtonVisible; }
             set { DockHandler.CloseButtonVisible = value; }
         }
-        
+
+        public Color? ActiveTabColor { get; set; }
+        public Color? InactiveTabColor { get; set; }
+        public Color? LostFocusColor { get; set; }
+        public Color? MouseHoverColor { get; set; }
+
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DockPanel DockPanel
