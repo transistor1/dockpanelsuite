@@ -42,14 +42,14 @@ namespace WeifenLuo.WinFormsUI.ThemeVS2013
                     case DockStyle.Right:
                     case DockStyle.Left:
                         {
-                            Debug.Assert(SplitterSize == rect.Width);
+                            //Debug.Assert(SplitterSize == rect.Width);
                             e.Graphics.FillRectangle(_horizontalBrush, rect);
                         }
                         break;
                     case DockStyle.Bottom:
                     case DockStyle.Top:
                         {
-                            Debug.Assert(SplitterSize == rect.Height);
+                            //Debug.Assert(SplitterSize == rect.Height);
                             e.Graphics.FillRectangle(_horizontalBrush, rect);
                         }
                         break;
