@@ -32,8 +32,9 @@ namespace WeifenLuo.WinFormsUI.ThemeVS2013
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            var color = DockPanel.Theme.ColorPalette.ToolWindowBorder;
-            e.Graphics.FillRectangle(DockPanel.Theme.PaintingService.GetBrush(color), e.ClipRectangle);
+            var color = DockPanel?.Theme.ColorPalette.ToolWindowBorder;
+            if (color != null)
+                e.Graphics.FillRectangle(DockPanel.Theme.PaintingService.GetBrush(color ?? Color.Black), e.ClipRectangle);
         }
 
         protected override Rectangle ContentRectangle
